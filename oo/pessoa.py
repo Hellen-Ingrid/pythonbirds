@@ -18,4 +18,7 @@ if __name__ == '__main__':
     print(hellen.idade)
     for filho in hellen.filhos:
         print(filho.nome)
-
+    hellen.sobrenome = 'Cunha'
+    del hellen.filhos
+    print(hellen.__dict__)
+    print(romeu.__dict__)
