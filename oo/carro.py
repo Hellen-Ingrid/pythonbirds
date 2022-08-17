@@ -73,21 +73,21 @@ O   L
     0
     >>> carro.acelerar()
     >>> carro.calcular_velocidade()
-    2
+    1
     >>> carro.frear()
     >>> carro.calcular_velocidade()
     0
     >>> carro.calcular_direcao()
-    >>> 'Norte'
+    'Norte'
     >>> carro.girar_a_direita()
     >>> carro.calcular_direcao()
-    >>> 'Leste'
+    'Leste'
     >>> carro.girar_a_esquerda()
     >>> carro.calcular_direcao()
-    >>> 'Norte'
+    'Norte'
     >>> carro.girar_a_esquerda()
     >>> carro.calcular_direcao()
-    >>> 'Oeste'
+    'Oeste'
 """
 
 
@@ -129,7 +129,91 @@ class Direcao:
         self.valor = self.rotacao_a_esquerda_dct[self.valor]
 
 
+class Carro:
+    def __init__(self, direcao, motor):
+        self.direcao = direcao
+        self.motor = motor
+
+    def calcular_direcao(self):
+        return self.direcao.valor
+
+    def calcular_velocidade(self):
+        return self.motor.velocidade
+
+    def acelerar(self):
+        return self.motor.acelerar()
+
+    def frear(self):
+        return self.motor.frear()
+
+    def girar_a_direita(self):
+        return self.direcao.girar_a_direita()
+
+    def girar_a_esquerda(self):
+        return self.direcao.girar_a_esquerda()
 
 
+motor = Motor()
+print(motor.velocidade)
 
+motor.acelerar()
+print(motor.velocidade)
 
+motor.acelerar()
+print(motor.velocidade)
+
+motor.acelerar()
+print(motor.velocidade)
+
+motor.frear()
+print(motor.velocidade)
+
+motor.frear()
+print(motor.velocidade)
+
+direcao = Direcao()
+print(direcao.valor)
+
+direcao.girar_a_direita()
+print(direcao.valor)
+
+direcao.girar_a_direita()
+print(direcao.valor)
+
+direcao.girar_a_direita()
+print(direcao.valor)
+
+direcao.girar_a_direita()
+print(direcao.valor)
+
+direcao.girar_a_esquerda()
+print(direcao.valor)
+
+direcao.girar_a_esquerda()
+print(direcao.valor)
+
+direcao.girar_a_esquerda()
+print(direcao.valor)
+
+direcao.girar_a_esquerda()
+print(direcao.valor)
+
+carro = Carro(direcao, motor)
+print(carro.calcular_velocidade())
+
+carro.acelerar()
+print(carro.calcular_velocidade())
+
+carro.frear()
+print(carro.calcular_velocidade())
+
+print(carro.calcular_direcao())
+
+carro.girar_a_direita()
+print(carro.calcular_direcao())
+
+carro.girar_a_esquerda()
+print(carro.calcular_direcao())
+
+carro.girar_a_esquerda()
+print(carro.calcular_direcao())
